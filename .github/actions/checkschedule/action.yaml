@@ -4,11 +4,11 @@ description: 'Check if today is within the first week of the month'
 outputs:
   continue-to-run:
     description: Today is within the first week of the month
-    value: ${{ steps.suffix.outputs.continue-to-run }}
+    value: ${{ steps.check-schedule.outputs.continue-to-run }}
 runs:
   using: composite
   steps:
-    - id: continue-to-run
+    - id: check-schedule
       run: |
         if [ `date +'%d' | sed 's/^0*//'` -le 7 ]; then
           echo "continue-to-run=true" >> $GITHUB_OUTPUT
