@@ -3,6 +3,7 @@ name: sample-workfloww
 on:
   push:
   schedule:
+    # Trigger every Monday, then checkschedule will check if today is within the first 7 days
     - cron: '0 0 * * mon'
 
 defaults:
