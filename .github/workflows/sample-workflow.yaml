@@ -34,4 +34,4 @@ jobs:
       - check-schedule
     runs-on: ubuntu-latest
     steps:
-      - run: echo "continue-to-run  = {{ needs.check-schedule.outputs.continue-to-run }}"
+      - run: echo "continue-to-run  = ${{ needs.check-schedule.outputs.continue-to-run }}"
